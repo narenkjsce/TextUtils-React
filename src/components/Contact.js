@@ -69,7 +69,7 @@ export default function Contact() {
             </form>
 
             <div className="text-center text-md-left my-2">
-                <a className="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+                <a className="btn btn-primary" onclick="document.getElementById('contact-form').submit();" href='/'>Send</a>
             </div>
             <div className="status"></div>
         </div>
