@@ -1,18 +1,18 @@
 //import logo from './logo.svg';
 import './App.css';
-//import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React, { useState } from 'react';
-//import Contact from './components/Contact';
+import Contact from './components/Contact';
 import Alert from './components/Alert';
-// import {
-//   BrowserRouter as Router,
-//   Routes, // initially it was switch now it got converted into routes.... 
-//   Route
-//   //,
-//   //Link
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes, // initially it was switch now it got converted into routes.... 
+  Route
+  //,
+  //Link
+} from "react-router-dom";
 
 function App() {
   const[mode,setMode] = useState('light');
@@ -58,7 +58,7 @@ document.title= "TextUtils Amazing";
   }
   return (
     <>    
-  {/* <Router>  */}
+  <Router> 
       {/*We can pass N number of Elements to our component and that can be used as props*/}
       <Navbar title="TextUtils" aboutText="About" ContactText= "Contact" mode={mode} toggleMode={toggleMode}/>
       <Alert alert={alertVariable}/>
@@ -66,17 +66,17 @@ document.title= "TextUtils Amazing";
       <div className="container my-3">
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
-        {/* <Routes>   */}
+        <Routes>  
           {/* users/  -- > Component 1 
               users/Home -- > Component 2* : if we write path then will display component 1 and if we write exact then we will have component 2/}
           {/*To do complete match we have to write exact */}         
-            {/* <Route  exact path="/about" element={<About />} /> */}
-            <TextForm showAlert={showAlert} heading="Enter some text" mode={mode}/>
-            {/* <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter some text" mode={mode}/>  }/>    */}
-            {/* <Route  exact path="/contactus" element={<Contact />} />          */}
-        {/* </Routes> */}
+            <Route  exact path="/about" element={<About />} />
+            {/* <TextForm showAlert={showAlert} heading="Enter some text" mode={mode}/> */}
+            <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter some text" mode={mode}/>  }/>   
+            <Route  exact path="/contactus" element={<Contact />} />         
+        </Routes>
       </div>
-    {/* </Router>  */}
+    </Router> 
   </>
   );
 }

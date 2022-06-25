@@ -11,7 +11,8 @@ export default function Navbar(props) {
     // <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>      
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">{props.title}</a>
+        {/* <a className="navbar-brand" href="#">{props.title}</a> */}
+        <Link className="navbar-brand" to="/">{props.title}</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -19,15 +20,15 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto ">
             <li className="nav-item">
-            <a className="nav-link active"  href="#">Home</a>
-              {/* <Link className="nav-link active"  to="/">Home</Link> */}
+            {/* <a className="nav-link active"  href="#">Home</a> */}
+              <Link className="nav-link active"  to="/">Home</Link>
             </li>
-            {/* <li className="nav-item">
+            <li className="nav-item">
               <Link className="nav-link" to="/about">{props.aboutText}</Link>
             </li> 
             <li className="nav-item">
               <Link className="nav-link" to="/contactus">{props.ContactText}</Link>
-            </li>             */}
+            </li>            
           </ul>
           {/* <form className="d-flex" role="search">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
