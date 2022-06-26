@@ -47,14 +47,14 @@ const handleOnChange = (event)=>{
             style={{backgroundColor : props.mode === 'light'?'white':'#042743',color : props.mode === 'light'?'black':'white' }} id="myBox" rows="7"></textarea>
         </div>
         {/* mx-2 : is a bootstarp class which gives margin to x axis ....*/}
-       <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
-       <button className="btn btn-primary mx-2" onClick={handleLowClick}>Convert to Lowercase</button>
-       <button className="btn btn-primary mx-2" onClick={handleCapitalClick}>Capital First Letter</button>
+       <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
+       <button className="btn btn-primary mx-1 my-1" onClick={handleLowClick}>Convert to Lowercase</button>
+       <button className="btn btn-primary mx-1 my-1" onClick={handleCapitalClick}>Capital First Letter</button>
     </div>
      
     <div className="container my-3" style={{ color : props.mode === 'dark'?'white':'#042743'}}>
         <h3> Your Text Area Sumamry </h3>
-        <p>There are <b>{text.split(" ").length}</b> words and <b>{text.length}</b> character </p>
+        <p>There are <b>{text.split(" ").filter((element)=>{return element.length !== 0}).length}</b> words and <b>{text.length}</b> character </p>
         <h2> Preview</h2>
         <p>{text}</p>
     </div>

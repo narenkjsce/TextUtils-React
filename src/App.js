@@ -70,10 +70,10 @@ document.title= "TextUtils Amazing";
           {/* users/  -- > Component 1 
               users/Home -- > Component 2* : if we write path then will display component 1 and if we write exact then we will have component 2/}
           {/*To do complete match we have to write exact */}         
-            <Route  exact path="/about" element={<About />} />
+            <Route  exact path="/about" element={<About mode={mode} />} />
             {/* <TextForm showAlert={showAlert} heading="Enter some text" mode={mode}/> */}
             <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter some text" mode={mode}/>  }/>   
-            <Route  exact path="/contactus" element={<Contact />} />         
+            <Route  exact path="/contactus" element={<Contact  mode={mode} />}  />         
         </Routes>
       </div>
     </Router> 
