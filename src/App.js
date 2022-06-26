@@ -34,25 +34,26 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = '#042743';
       showAlert("Dark mode has been enabled","success");
-      document.title= "TextUtils-Dark Mode";
-      setInterval(()=>{
-document.title= "TextUtils Amazing";
-      },2000);
-      setInterval(()=>{
-        document.title= "Install Now Urgent";
-              },1500);
+     // document.title= "TextUtils-Dark Mode";
+//       setInterval(()=>{
+// document.title= "TextUtils Amazing";
+//       },2000);
+//       setInterval(()=>{
+//         document.title= "Install Now Urgent";
+//               },1500);
+//     }
     }
     else{
       setMode('light');
       document.body.style.backgroundColor = 'white';
       showAlert("Light mode has been enabled","success");
-      document.title= "TextUtils-Light Mode";
-      setInterval(()=>{
-document.title= "TextUtils Amazing";
-      },2000);
-      setInterval(()=>{
-        document.title= "Install Now Urgent";
-              },1500);
+    //  document.title= "TextUtils-Light Mode";
+//       setInterval(()=>{
+// document.title= "TextUtils Amazing";
+//       },2000);
+//       setInterval(()=>{
+//         document.title= "Install Now Urgent";
+//               },1500);
     }
 
   }
@@ -72,7 +73,7 @@ document.title= "TextUtils Amazing";
           {/*To do complete match we have to write exact */}         
             <Route  exact path="/about" element={<About mode={mode} />} />
             {/* <TextForm showAlert={showAlert} heading="Enter some text" mode={mode}/> */}
-            <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter some text" mode={mode}/>  }/>   
+            <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Try TextUtils - Word Counter | Character Counter" mode={mode}/>  }/>   
             <Route  exact path="/contactus" element={<Contact  mode={mode} />}  />         
         </Routes>
       </div>

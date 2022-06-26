@@ -41,22 +41,22 @@ const handleOnChange = (event)=>{
     <>   
      <div className='container' style={{ color : props.mode === 'light'?'black':'white'}}>      
        <div className="mb-3">
-        <h4>{props.heading}</h4>
+        <h4 className='mb-4'>{props.heading}</h4>
             {/* <label for="myBox" className="form-label">Text Area</label> */}
             <textarea className="form-control" value={text} onChange={handleOnChange} 
             style={{backgroundColor : props.mode === 'light'?'white':'#042743',color : props.mode === 'light'?'black':'white' }} id="myBox" rows="7"></textarea>
         </div>
         {/* mx-2 : is a bootstarp class which gives margin to x axis ....*/}
-       <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
-       <button className="btn btn-primary mx-1 my-1" onClick={handleLowClick}>Convert to Lowercase</button>
-       <button className="btn btn-primary mx-1 my-1" onClick={handleCapitalClick}>Capital First Letter</button>
+       <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
+       <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleLowClick}>Convert to Lowercase</button>
+       <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleCapitalClick}>Capital First Letter</button>
     </div>
      
     <div className="container my-3" style={{ color : props.mode === 'dark'?'white':'#042743'}}>
         <h3> Your Text Area Sumamry </h3>
-        <p>There are <b>{text.split(" ").filter((element)=>{return element.length !== 0}).length}</b> words and <b>{text.length}</b> character </p>
+        <p>There are <b>{text.split("/\s+/").filter((element)=>{return element.length !== 0}).length}</b> words and <b>{text.length}</b> character </p>
         <h2> Preview</h2>
-        <p>{text}</p>
+        <p>{text.length>0?text:"Nothing to preview."}</p>
     </div>
     </>
   )
